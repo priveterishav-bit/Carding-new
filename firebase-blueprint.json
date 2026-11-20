@@ -1,0 +1,326 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated simulator user wallet profile and settings.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "customerId": { "type": "string" },
+        "coins": { "type": "integer" },
+        "unlimitedMode": { "type": "boolean" },
+        "unlimitedBonusBalance": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "pinEnabled": { "type": "boolean" },
+        "simPin": { "type": "string" },
+        "soundEnabled": { "type": "boolean" },
+        "lastDailyClaimDay": { "type": "string" },
+        "sellerAccountId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "customerId",
+        "coins",
+        "unlimitedMode",
+        "unlimitedBonusBalance",
+        "totalSpent",
+        "pinEnabled",
+        "simPin",
+        "soundEnabled",
+        "lastDailyClaimDay",
+        "sellerAccountId",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "VirtualCard": {
+      "title": "VirtualCard",
+      "description": "Fictional simulator virtual dollar card owned by a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "tierKey": { "type": "string" },
+        "cardTitle": { "type": "string" },
+        "cardNetworkLabel": { "type": "string" },
+        "cardholderName": { "type": "string" },
+        "cardNumber": { "type": "string" },
+        "expiryDisplay": { "type": "string" },
+        "cvvDisplay": { "type": "string" },
+        "balance": { "type": "number" },
+        "unlimitedBalance": { "type": "boolean" },
+        "cardActive": { "type": "boolean" },
+        "accentColorHex": { "type": "string" },
+        "upgradeLevel": { "type": "integer" },
+        "animatedStyle": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId",
+        "tierKey",
+        "cardTitle",
+        "cardNetworkLabel",
+        "cardholderName",
+        "cardNumber",
+        "expiryDisplay",
+        "cvvDisplay",
+        "balance",
+        "unlimitedBalance",
+        "cardActive",
+        "accentColorHex",
+        "upgradeLevel",
+        "animatedStyle",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "TransactionRecord": {
+      "title": "TransactionRecord",
+      "description": "Simulated payment, top-up, card purchase, or refund ledger record.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "transactionRef": { "type": "string" },
+        "idempotencyKey": { "type": "string" },
+        "type": { "type": "string" },
+        "amount": { "type": "number" },
+        "currencyLabel": { "type": "string" },
+        "merchantName": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "cardId": { "type": "string" },
+        "cardSummary": { "type": "string" },
+        "orderId": { "type": "string" },
+        "status": { "type": "string" },
+        "note": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId",
+        "transactionRef",
+        "idempotencyKey",
+        "type",
+        "amount",
+        "currencyLabel",
+        "merchantName",
+        "sellerId",
+        "sellerName",
+        "cardId",
+        "cardSummary",
+        "orderId",
+        "status",
+        "note",
+        "createdAt"
+      ]
+    },
+    "SupportTicket": {
+      "title": "SupportTicket",
+      "description": "Customer support ticket created by user inside simulator.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "ticketCode": { "type": "string" },
+        "subject": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "status": { "type": "string", "enum": ["OPEN", "IN_PROGRESS", "RESOLVED"] },
+        "resolutionNote": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId",
+        "ticketCode",
+        "subject",
+        "description",
+        "category",
+        "status",
+        "resolutionNote",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SellerProfile": {
+      "title": "SellerProfile",
+      "description": "Public simulator seller storefront and QR payment profile.",
+      "type": "object",
+      "properties": {
+        "sellerOwnerUid": { "type": "string" },
+        "sellerCode": { "type": "string" },
+        "storeName": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "logoToneHex": { "type": "string" },
+        "demoVerified": { "type": "boolean" },
+        "demoListed": { "type": "boolean" },
+        "qrPayload": { "type": "string" },
+        "ratingSum": { "type": "integer" },
+        "reviewCount": { "type": "integer" },
+        "completedOrdersCount": { "type": "integer" },
+        "virtualEarnings": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "sellerOwnerUid",
+        "sellerCode",
+        "storeName",
+        "description",
+        "category",
+        "logoToneHex",
+        "demoVerified",
+        "demoListed",
+        "qrPayload",
+        "ratingSum",
+        "reviewCount",
+        "completedOrdersCount",
+        "virtualEarnings",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "MarketplaceProduct": {
+      "title": "MarketplaceProduct",
+      "description": "Simulator product listed by a seller store.",
+      "type": "object",
+      "properties": {
+        "sellerId": { "type": "string" },
+        "sellerOwnerUid": { "type": "string" },
+        "storeName": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "stockCount": { "type": "integer" },
+        "iconKey": { "type": "string" },
+        "demoListed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "sellerId",
+        "sellerOwnerUid",
+        "storeName",
+        "name",
+        "description",
+        "category",
+        "price",
+        "stockCount",
+        "iconKey",
+        "demoListed",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SimulatorOrder": {
+      "title": "SimulatorOrder",
+      "description": "Simulated buyer-seller purchase order with 9-stage tracking timeline and refund status.",
+      "type": "object",
+      "properties": {
+        "orderCode": { "type": "string" },
+        "buyerUid": { "type": "string" },
+        "buyerName": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "sellerOwnerUid": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "itemsSummary": { "type": "string" },
+        "itemCount": { "type": "integer" },
+        "totalAmount": { "type": "number" },
+        "cardId": { "type": "string" },
+        "cardSummary": { "type": "string" },
+        "transactionRef": { "type": "string" },
+        "status": { "type": "string" },
+        "trackingEvents": { "type": "array" },
+        "refundStatus": { "type": "string", "enum": ["NONE", "REQUESTED", "APPROVED", "DECLINED"] },
+        "refundReason": { "type": "string" },
+        "sellerResponse": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "orderCode",
+        "buyerUid",
+        "buyerName",
+        "sellerId",
+        "sellerOwnerUid",
+        "sellerName",
+        "itemsSummary",
+        "itemCount",
+        "totalAmount",
+        "cardId",
+        "cardSummary",
+        "transactionRef",
+        "status",
+        "trackingEvents",
+        "refundStatus",
+        "refundReason",
+        "sellerResponse",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SellerReview": {
+      "title": "SellerReview",
+      "description": "Buyer rating and feedback on a simulator seller.",
+      "type": "object",
+      "properties": {
+        "sellerId": { "type": "string" },
+        "orderId": { "type": "string" },
+        "buyerUid": { "type": "string" },
+        "buyerName": { "type": "string" },
+        "rating": { "type": "integer" },
+        "comment": { "type": "string" },
+        "demoListed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "sellerId",
+        "orderId",
+        "buyerUid",
+        "buyerName",
+        "rating",
+        "comment",
+        "demoListed",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Authenticated user's simulator profile and preferences."
+    },
+    "/users/{userId}/cards/{cardId}": {
+      "schema": { "$ref": "#/entities/VirtualCard" },
+      "description": "User's fictional virtual dollar cards."
+    },
+    "/users/{userId}/transactions/{transactionId}": {
+      "schema": { "$ref": "#/entities/TransactionRecord" },
+      "description": "User's simulated payment ledger and receipts."
+    },
+    "/users/{userId}/tickets/{ticketId}": {
+      "schema": { "$ref": "#/entities/SupportTicket" },
+      "description": "User's customer support tickets."
+    },
+    "/sellers/{sellerId}": {
+      "schema": { "$ref": "#/entities/SellerProfile" },
+      "description": "Public simulator seller storefronts."
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/MarketplaceProduct" },
+      "description": "Public simulator marketplace products."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/SimulatorOrder" },
+      "description": "Shared buyer-seller simulated orders and tracking timelines."
+    },
+    "/reviews/{reviewId}": {
+      "schema": { "$ref": "#/entities/SellerReview" },
+      "description": "Buyer reviews for simulator sellers."
+    }
+  }
+}

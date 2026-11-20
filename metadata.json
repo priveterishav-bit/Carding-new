@@ -1,0 +1,6 @@
+{
+  "name": "Vault Card",
+  "description": "Interactive 3D virtual card vault, QR pay, and entertainment marketplace with fictional in-app balances only.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
